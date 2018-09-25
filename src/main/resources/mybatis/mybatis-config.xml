@@ -16,12 +16,21 @@
 		<setting name="defaultStatementTimeout" value="600" />
 	</settings>
 	
+	<!-- 
 	<typeAliases>
 		<typeAlias alias="user" type="com.miroslav.house.common.model.User"/>
 	</typeAliases>
+	 -->
 	
 	<mappers>
-	 <mapper resource="mapper/user.xml" />
+	 <mapper resource="/mapper/AgencyMapper.xml" />
+	 <mapper resource="/mapper/BlogMapper.xml" />
+	 <mapper resource="/mapper/CommentMapper.xml" />
+	 <mapper resource="/mapper/CommunityMapper.xml" />
+	 <mapper resource="/mapper/HouseMapper.xml" />
+	 <mapper resource="/mapper/HouseMsgMapper.xml" />
+	 <mapper resource="/mapper/HouseUserMapper.xml" />
+	 <mapper resource="/mapper/UserMapper.xml" />
 	</mappers>
 	
 	
