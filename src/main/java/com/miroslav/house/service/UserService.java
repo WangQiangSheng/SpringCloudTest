@@ -18,4 +18,8 @@ public class UserService {
 		return userMapper.selectByPrimaryKey(id);
 	}
 	
+	public List<User> selectAllUser (){
+		return userMapper.selectAllUser();
+	}
+	
 }
