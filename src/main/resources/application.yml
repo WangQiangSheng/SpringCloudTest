@@ -2,6 +2,17 @@ server:
   port: 8088
 
 spring:
+    freemarker:
+        charset: UTF-8
+        content-type: text/html; charset=utf-8
+        expose-request-attributes: true
+        expose-session-attributes: true
+        expose-spring-macro-helpers: true
+        suffix: .ftl
+        settings:
+            datetime_format: yyyy-MM-dd HH:mm:ss
+            default_encoding: UTF-8
+            auto_import:  common/common.ftl as common
     datasource:
         name: test
         url: jdbc:mysql://118.25.12.59:3306/house
