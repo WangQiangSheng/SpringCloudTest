@@ -2,6 +2,8 @@ package com.miroslav.house.controller;
 
 import java.util.List;
 
+import org.apache.http.client.HttpClient;
+import org.apache.http.client.methods.HttpGet;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -19,6 +21,10 @@ public class HelloController {
 	@Autowired
 	private UserService userService;
 	
+	
+	@Autowired
+	private HttpClient httpClient;
+	
 	@RequestMapping("hello")
 	public String hello (ModelMap modelMap) throws Exception{
 		List<User> list = userService.selectAllUser();
@@ -26,6 +32,11 @@ public class HelloController {
 		modelMap.put("user", user);
 		
 		System.out.println(new ObjectMapper().writeValueAsString(user));
+		
+		
+		String strMsg = httpClient.execute(new HttpGet("http://www.baidu.com")).getEntity().toString();
+		
+		System.out.println(strMsg);
 		
 		return "hello";
 	}
